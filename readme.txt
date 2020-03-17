@@ -60,18 +60,18 @@ Sherpa Field Mapping Information
 
 Below is a table of how fields map with this add on. Please refer to your Sherpa documentation for more information.
 
-Addon Field Name        Sherpa Field Name                   Required By Sherpa		Main Settings Autofill
-First Name				      primaryContactFirstName				      Yes						        No
-Last Name				        primaryContactLastName				      Yes						        No
-Email Address			      primaryContactEmail					        No						        No
-Phone					          primaryContactHomePhone				      No						        No
-Vendor Name				      vendorName							            Yes						        Yes
-Source Category			    sourceCategory						          Yes						        Yes
-Source Name				      sourceName							            Yes						        Yes
-Advisor Referral Note	  advisorReferralNote					        No						        No
-Resident First Name		  residentContactFirstName			      Yes						        Yes
-Resident Last Name		  residentContactLastName				      Yes						        Yes
-Resident Relationship	  primaryContactResidentRelationship	No						        Yes
+Addon Field Name,Sherpa Field Name,Required By Sherpa,Main Settings Autofill
+First Name,primaryContactFirstName,Yes,No
+Last Name,primaryContactLastName,Yes,No
+Email Address,primaryContactEmail,No,No
+Phone,primaryContactHomePhone,No,No
+Vendor Name,vendorName,Yes,Yes
+Source Category,sourceCategory,Yes,Yes
+Source Name,sourceName,Yes,Yes
+Advisor Referral Note,advisorReferralNote,No,No
+Resident First Name,residentContactFirstName,Yes,Yes
+Resident Last Name,residentContactLastName,Yes,Yes
+Resident Relationship,primaryContactResidentRelationship,No,Yes
 
 == Changelog ==
 
