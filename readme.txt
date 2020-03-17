@@ -19,7 +19,7 @@ Main Settings
 
 Main for settings can be found under admin -> Forms -> Settings -> Sherpa v2 GForm. You will need a the Company ID and Authentication Key supplied by Sherpa. The sandbox Company ID and Authentication Key are set by default. You will need the correct values supplied by Sherpa.
 
-The base endpoint url is also set to the sandbox environment by default. The production endpoint url is https://members.sherpacrm.com/v1. This value is used to construct the full endpoint url using the Company and Community IDs. Please do not use any trailing slashes.
+The base endpoint url is also set to the sandbox environment by default. This value is used to construct the full endpoint url using the Company and Community IDs. Please do not use any trailing slashes.
 
 If you wish to send a debug email select the "Send a debug email" checkbox. The debug email contains the json query and the response from sherpa, and is useful in debugging without the presence of a log file.
 
