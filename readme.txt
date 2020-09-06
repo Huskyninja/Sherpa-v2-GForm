@@ -57,10 +57,6 @@ Resident Relationship -> hidden or select
 
 So make sure when creating your form that you use the correct form field types for the Sherpa field mapping.
 
-Sherpa Field Mapping Information
-
-Below is a table of how fields map with this add on. Please refer to your Sherpa documentation for more information.
-
 For more information on field mapping, see the Sherpa v2 GForm plugin page under Forms in the Admin Console.
 
 == Changelog ==
