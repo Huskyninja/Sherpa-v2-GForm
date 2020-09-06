@@ -1,9 +1,9 @@
 === Plugin Name ===
 Plugin Name: Sherpa v2 GForm
 Description: Send form data to the Sherpa CRM's v2 endpoint using Gravity Form's Add-on Framework
-version: 0.4
-Author: Sage Age
-Author URI: https://www.sageagestrategies.com/
+version: 0.5
+Author: Husky Ninja
+Author URI: https://www.husky.ninja
 License: GPLv3 or later
 Text Domain: sherpa_v2_gform
 Domain Path: /languages
@@ -19,7 +19,7 @@ Main Settings
 
 Main for settings can be found under admin -> Forms -> Settings -> Sherpa v2 GForm. You will need a the Company ID and Authentication Key supplied by Sherpa. The sandbox Company ID and Authentication Key are set by default. You will need the correct values supplied by Sherpa.
 
-The base endpoint url is also set to the sandbox environment by default. This value is used to construct the full endpoint url using the Company and Community IDs. Please do not use any trailing slashes.
+The base endpoint url is also set to the sandbox environment by default. The production endpoint url is https://members.sherpacrm.com/v1. This value is used to construct the full endpoint url using the Company and Community IDs. Please do not use any trailing slashes.
 
 If you wish to send a debug email select the "Send a debug email" checkbox. The debug email contains the json query and the response from sherpa, and is useful in debugging without the presence of a log file.
 
@@ -43,37 +43,32 @@ To map the form fields, select the relevant Field (to be mapped for Sherpa) to t
 
 The form field must be of the correct type. The mapping is as follows:
 
-First Name -> textfield
-Last Name -> textfield
-Email Address -> email
-Phone -> phone
+First Name -> name, text or hidden
+Last Name -> name, text or hidden
+Email Address -> email or hidden
+Phone -> phone or hidden
 Vendor Name -> hidden
 Source Category -> hidden
 Source Name -> hidden
 Advisor Referral Note -> hidden, textarea or select
-Resident First Name -> hidden or textfield
-Resident Last Name -> hidden or textfield
+Resident First Name -> hidden or text
+Resident Last Name -> hidden or text
 Resident Relationship -> hidden or select
+
 So make sure when creating your form that you use the correct form field types for the Sherpa field mapping.
 
 Sherpa Field Mapping Information
 
 Below is a table of how fields map with this add on. Please refer to your Sherpa documentation for more information.
 
-Addon Field Name,Sherpa Field Name,Required By Sherpa,Main Settings Autofill
-First Name,primaryContactFirstName,Yes,No
-Last Name,primaryContactLastName,Yes,No
-Email Address,primaryContactEmail,No,No
-Phone,primaryContactHomePhone,No,No
-Vendor Name,vendorName,Yes,Yes
-Source Category,sourceCategory,Yes,Yes
-Source Name,sourceName,Yes,Yes
-Advisor Referral Note,advisorReferralNote,No,No
-Resident First Name,residentContactFirstName,Yes,Yes
-Resident Last Name,residentContactLastName,Yes,Yes
-Resident Relationship,primaryContactResidentRelationship,No,Yes
+For more information on field mapping, see the Sherpa v2 GForm plugin page under Forms in the Admin Console.
 
 == Changelog ==
+
+= 0.5 =
+* updated author info now that sage age no longer supporting module
+* finally fixed scripts and styles
+* added placeholder in the languages directory
 
 = 0.4 =
 * changed default method for posting to Wordpress Remote Post with cURL as a selectable alternative

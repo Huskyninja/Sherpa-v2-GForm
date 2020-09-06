@@ -325,19 +325,14 @@ class SherpaV2Gform extends GFAddOn {
     public function scripts() {
         $scripts = array(
             array(
-                'handle'  => 'my_script_js',
-                'src'     => $this->get_base_url() . '/js/my_script.js',
+                'handle'  => 'sherpa_two_gform_js',
+                'src'     => $this->get_base_url() . '/js/sherpa_two_gform.js',
                 'version' => $this->_version,
                 'deps'    => array( 'jquery' ),
-                'strings' => array(
-                    'first'  => esc_html__( 'First Choice', 'sherpa_v2_gform' ),
-                    'second' => esc_html__( 'Second Choice', 'sherpa_v2_gform' ),
-                    'third'  => esc_html__( 'Third Choice', 'sherpa_v2_gform' )
-                ),
+                'strings' => array(),
                 'enqueue' => array(
                     array(
-                        'admin_page' => array( 'form_settings' ),
-                        'tab'        => 'sherpa_v2_gform'
+                        'admin_page' => array( 'plugin_page' )
                     )
                 )
             ),
@@ -355,11 +350,13 @@ class SherpaV2Gform extends GFAddOn {
     public function styles() {
         $styles = array(
             array(
-                'handle'  => 'my_styles_css',
-                'src'     => $this->get_base_url() . '/css/my_styles.css',
+                'handle'  => 'sherpa_two_gform_css',
+                'src'     => $this->get_base_url() . '/css/sherpa_two_gform.css',
                 'version' => $this->_version,
                 'enqueue' => array(
-                    array( 'field_types' => array( 'poll' ) )
+                    array( 
+						'admin_page' => array( 'plugin_page' )
+					)
                 )
             )
         );
@@ -391,8 +388,6 @@ class SherpaV2Gform extends GFAddOn {
     public function plugin_page() {
         $instructions = '';
 		
-		$instructions .= '<style>.maps, .maps td, .maps th {border: 1px solid black;} .maps td, .maps th {padding: 3px;}</style>';
-		
 		$instructions .= '<h2>Important: This plugin is an early alpha.</h2>';
 		$instructions .= '<p>If you intend to use this in a production environment, please alert the development team. Also be sure to report any issues or unexpected behaviors promptly.</p>';
 		
@@ -411,17 +406,17 @@ class SherpaV2Gform extends GFAddOn {
 		$instructions .= '<h3>Field Mapping</h3>';
 		$instructions .= '<p>To map the form fields, select the relevant Field (to be mapped for Sherpa) to the Form Field (from the Gravity Form). Some field values are set by the Sherpa Autoset Values (above), but may be overwritten here.</p>';
 		$instructions .= '<p>The form field must be of the correct type. The mapping is as follows:</p>';
-		$instructions .= '<ul>';
-		$instructions .= '<li>First Name -> textfield</li>';
-		$instructions .= '<li>Last Name -> textfield</li>';
-		$instructions .= '<li>Email Address -> email</li>';
-		$instructions .= '<li>Phone -> phone</li>';
+		$instructions .= '<ul class="instruction">';
+		$instructions .= '<li>First Name -> name, text or hidden</li>';
+		$instructions .= '<li>Last Name -> name, text or hidden</li>';
+		$instructions .= '<li>Email Address -> email or hidden</li>';
+		$instructions .= '<li>Phone -> phone or hidden</li>';
 		$instructions .= '<li>Vendor Name -> hidden</li>';
 		$instructions .= '<li>Source Category -> hidden</li>';
 		$instructions .= '<li>Source Name -> hidden</li>';
 		$instructions .= '<li>Advisor Referral Note -> hidden, textarea or select</li>';
-		$instructions .= '<li>Resident First Name -> hidden or textfield</li>';
-		$instructions .= '<li>Resident Last Name -> hidden or textfield</li>';
+		$instructions .= '<li>Resident First Name -> text or hidden</li>';
+		$instructions .= '<li>Resident Last Name -> text or hidden</li>';
 		$instructions .= '<li>Resident Relationship -> hidden or select</li>';
 		$instructions .= '</ul>';
 		$instructions .= '<p>So make sure when creating your form that you use the correct form field types for the Sherpa field mapping.</p>';
